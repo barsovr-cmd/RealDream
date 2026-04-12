@@ -845,7 +845,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Montserrat', san
 <script>
 // ===== ДАННЫЕ ДЛЯ ОБНОВЛЕНИЯ =====
 const PASSWORD     = 'dream2026';
-const UPDATED_DATE = '13.04.2026 04:36';
+const UPDATED_DATE = '13.04.2026 04:49';
 const Q2_PLAN      = 2600000;  // Апр + Май + Июн
 const Q3_PLAN      = 2400000;  // Июл + Авг + Сен  (* может быть скорректирован)
 const Q4_PLAN      = 3900000;  // Окт + Ноя + Дек  (* может быть скорректирован)
@@ -1018,7 +1018,7 @@ function buildAgentCards(sorted, period, plan){
   container.innerHTML = '';
 
   sorted.forEach((r,i)=>{
-    const sales      = r.stat.sales;
+    const sales      = r.stat.commission;  // план-зачёт (AF) — мерило прогресса
     const pct        = plan>0 ? Math.round(sales/plan*100) : 0;
     const remaining  = Math.max(plan-sales, 0);
     const commission = sales>=plan ? 35 : 30;
